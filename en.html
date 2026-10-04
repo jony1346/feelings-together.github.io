@@ -247,13 +247,13 @@ html{font-size:16px!important}.printquestions{display:block}.printquestions.omit
 @media screen{
 #print{max-width:none;width:100%;margin:0;padding-top:24px}
 #print .print-toolbar{max-width:none;margin:18px 0 0;padding:0;border:0}
-#print .print-options{display:grid;grid-template-columns:180px minmax(0,1fr);align-items:center;gap:24px;padding:0;border:0}
-#print .print-mode{width:auto;max-width:none}#print .print-mode label{font-size:.875rem;color:var(--ink);margin-bottom:5px}#print .print-mode select{width:100%;min-height:48px}
+#print .print-options{display:grid;grid-template-columns:270px minmax(0,1fr);align-items:center;gap:28px;padding:0;border:0}
+#print .print-mode{display:flex;flex-direction:row;align-items:center;gap:12px;min-width:0;width:auto;max-width:none}#print .print-mode label{flex:0 0 auto;font-size:.875rem;line-height:1.5;color:var(--ink);margin:0}#print .print-mode select{flex:1;min-width:0;width:100%;min-height:44px;padding:7px 12px}
 #print .print-question-option{margin:0;min-height:44px;align-items:flex-start;font-size:1rem;line-height:1.5;gap:12px}#print .print-question-option input{margin:2px 0 0}#print .print-question-option span span{display:block}#print .print-question-helper{margin-top:2px;font-size:.875rem;line-height:1.5;color:var(--muted)}
 #print .print-submit{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:16px;padding:0 0 16px;border-bottom:1px solid var(--line)}
 #print #printQuestionInfo{margin:0;font-size:.9375rem;line-height:1.65;font-weight:500;color:var(--ink)}#print .print-submit .cta{flex:0 0 auto;min-height:48px;width:auto}
 #print .print-note{margin:16px 0 20px;font-size:.875rem}#print .print-note h3{font-size:.875rem;font-weight:600;color:var(--deep)}#print .print-note p{margin:4px 0 0;line-height:1.7;max-width:none}#printCarousel{margin-top:20px}
-@media(max-width:600px){#print .print-options{grid-template-columns:1fr;gap:18px}#print .print-mode{max-width:240px}#print .print-submit{flex-direction:column;align-items:stretch;gap:12px;margin-top:16px;padding:0 0 16px}#print .print-submit .cta{width:100%}#print .print-note{margin-bottom:22px}}
+@media(max-width:600px){#print .print-options{grid-template-columns:1fr;gap:18px}#print .print-mode{width:100%;max-width:310px}#print .print-submit{flex-direction:column;align-items:stretch;gap:12px;margin-top:16px;padding:0 0 16px}#print .print-submit .cta{width:100%}#print .print-note{margin-bottom:22px}}
 }
 
 
