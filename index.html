@@ -148,7 +148,8 @@ h1{font-size:clamp(2rem,8vw,2.7rem);line-height:1.25;overflow-wrap:break-word}h2
 #printCarousel{margin-top:28px}
 .carousel-heading{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:18px}
 .carousel-heading h3{font-size:1.2rem;margin:0}
-.card-track{--preview-width:230px;direction:ltr;overflow:hidden;padding:8px 0 20px;pointer-events:none}
+.card-track{--preview-width:230px;direction:ltr;width:100vw;margin-inline:calc(50% - 50vw);overflow:hidden;padding:8px 0 20px;pointer-events:none;mask-image:linear-gradient(to right,transparent,#000 24px,#000 calc(100% - 24px),transparent)}
+@media screen{html{overflow-x:clip}}
 .card-ribbon{display:flex;width:max-content;direction:ltr;animation:card-flow 144s linear infinite;will-change:transform}
 .card-group{display:flex;gap:24px;padding-inline-end:24px;flex-shrink:0}
 @keyframes card-flow{from{transform:translateX(0)}to{transform:translateX(-50%)}}
