@@ -58,16 +58,11 @@ return `<svg class="card-face" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2
 <text x="126" y="36" text-anchor="middle" font-size="17" font-weight="700" fill="#30463D">${tr('מרגישים יחד','Feel Together')}</text>
 <text x="126" y="54" text-anchor="middle" font-size="11" fill="#6E7D72">${tr('לתת מילים למה שמרגישים','Finding words for our feelings')}</text>
 <path d="M106 68 H146" stroke="#BAC7BA" stroke-width="1.2"/>
-<circle cx="126" cy="151" r="72" fill="${palettes[i]}"/>
-<circle cx="126" cy="151" r="51" fill="#FAF8F1" stroke="#40584A" stroke-width="2.4"/>
-<path d="${brows}" fill="none" stroke="#40584A" stroke-width="2.6" stroke-linecap="round"/>
-<circle cx="104" cy="143" r="3.4" fill="#40584A"/><circle cx="148" cy="143" r="3.4" fill="#40584A"/>
-<ellipse cx="93" cy="157" rx="8" ry="4" fill="#E9C6B8"/><ellipse cx="159" cy="157" rx="8" ry="4" fill="#E9C6B8"/>
-<path d="${mouth}" fill="none" stroke="#40584A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<svg x="52" y="80" width="148" height="157" viewBox="${(i%4)*240} ${Math.floor(i/4)*320} 240 320" preserveAspectRatio="xMidYMid meet"><image href="emotion-art.svg" width="960" height="960"/></svg>
 <text x="126" y="261" text-anchor="middle" font-size="${font}" font-weight="700" fill="#30463D">${title}</text>
 <circle cx="119" cy="282" r="2" fill="#C0CDBB"/><circle cx="126" cy="282" r="2" fill="#8DA58D"/><circle cx="133" cy="282" r="2" fill="#C0CDBB"/>
 <path d="M36 305 H216" stroke="#D9DED5"/>
-<text x="126" y="322" text-anchor="middle" font-size="12" font-weight="700" fill="#40584A">${tr('עידית','Idit')}</text><text x="126" y="336" text-anchor="middle" font-size="10" fill="#6E7D72">${tr('רוכשת דירות','Property buyer')}</text>
+<text x="126" y="327" text-anchor="middle" font-size="11" fill="#40584A">${tr('עידית · רוכשת דירות','Idit · Property buyer')}</text>
 </svg>`}
 function updateCard(b,o){if(!o)return;b.innerHTML='<span class="inside">'+cardFace(o.e)+'</span>';b.setAttribute('aria-label',b.classList.contains('revealed')||b.classList.contains('matched')?name(o.e):tr('קלף סגור','Face-down card'))}
 function startGame(){round++;show('game');first=null;lock=false;matched=0;last=null;document.getElementById('after').style.display='none';updateProgress();const picks=shuffle([...emotions]).slice(0,6);deck=shuffle([...picks,...picks].map(e=>({e})));const grid=document.getElementById('grid');grid.innerHTML='';deck.forEach(o=>{const b=document.createElement('button');b.className='card';updateCard(b,o);b.onclick=()=>flip(b,o);grid.appendChild(b)})}
