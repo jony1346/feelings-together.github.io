@@ -12,6 +12,27 @@
 @media(max-width:740px){.app{padding:0 20px 40px}.top{flex-wrap:wrap;padding:18px 0;gap:20px}.brand{font-size:1.5rem}.language{width:100%;gap:14px;display:grid;grid-template-columns:1fr 1fr 1fr}.language select{width:100%;min-width:0;font-size:.9375rem;min-height:42px}.control label{font-size:.8125rem}.pill{min-height:42px;grid-column:1 / -1;justify-self:start}.home-intro{grid-template-columns:1fr;gap:28px}#home{padding-top:36px}h1{font-size:2.7rem}.lead{font-size:1.125rem}.home-cards{min-height:0;padding:10px 0 42px;max-width:430px;width:100%;margin:auto}.home-card{max-width:185px}.visual-portrait{margin-bottom:14px}.visual-caption{bottom:0}.home-info{grid-template-columns:1fr;gap:20px;padding:32px 0;margin-top:36px}.home-info>h2{max-width:none;margin-bottom:0}.home-step{grid-template-columns:1fr;gap:8px;padding-bottom:22px}.home-parent{grid-template-columns:1fr;gap:12px;padding:30px 0}.home-parent h2,.home-parent p,.home-parent button{grid-column:1;max-width:none}.home-parent h2{margin-bottom:5px}.home-parent .home-quote{font-size:1.5rem}.actions{gap:18px}.actions .cta{padding-inline:20px}.home-bottom{font-size:.875rem}.grid,#game[data-pairs="8"] .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}#game[data-pairs="4"] .grid{grid-template-columns:repeat(2,minmax(0,1fr))}#game h2{font-size:2rem}#game .lead{margin-bottom:18px}.back-brand{font-size:.875rem}.back-symbol{font-size:2.6rem}#after .prompt{padding:24px}.questions{gap:8px}.questions button{font-size:1rem;padding:10px}.question-text{font-size:1.125rem}.print-toolbar>.cta{width:100%}.print-pagination{width:100%;justify-content:space-between}.print-page{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.pc{width:100%;height:auto}.tools{grid-template-columns:1fr}}
 @media(max-width:360px){.language{gap:8px}.language select{font-size:.875rem}.app{padding-inline:14px}.actions{flex-direction:column;align-items:stretch}.home-card{width:46%}.visual-portrait{width:45%}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media screen and (max-width:740px){
+.app,.app:has(#game.active){padding:0 max(16px,env(safe-area-inset-left)) 32px max(16px,env(safe-area-inset-right))}
+.top{gap:14px;padding:16px 0}.brand{font-size:1.35rem}
+.language{gap:10px;grid-template-columns:repeat(3,minmax(0,1fr))}.control{min-width:0}.language select{font-size:16px;min-height:44px}
+h1{font-size:clamp(2rem,8vw,2.7rem);line-height:1.25;overflow-wrap:break-word}h2{font-size:1.65rem}
+#home{padding-top:28px}.lead{font-size:1rem;line-height:1.8}.home-intro{gap:24px}
+.actions{flex-wrap:wrap;gap:12px}.actions button,.nav button,.print-pagination button,.questions button{min-height:48px}
+.home-cards{gap:12px}.home-card{width:46%}.visual-portrait{width:46%}
+#game{padding-top:24px}#game h2{font-size:1.75rem}.game-status{gap:12px}.nav{flex-wrap:wrap}
+.print-head .lead{max-width:100%}.print-toolbar{gap:12px}.print-toolbar>.cta{white-space:normal}
+.print-pagination{gap:8px;flex-wrap:wrap;font-size:.875rem}.print-pagination button{padding:8px 12px}
+#print .print-page{margin:20px 0;gap:12px}.pc .card-face{width:100%;height:100%}
+#after{padding:16px;padding-bottom:max(16px,env(safe-area-inset-bottom))}#after .prompt{padding:22px;max-height:calc(100dvh - 32px)}
+}
+@media screen and (max-width:480px){
+.actions{flex-direction:column;align-items:stretch}.actions button{width:100%;text-align:center}
+.home-intro .secondary{border:1px solid var(--line);padding:11px 16px;text-decoration:none}
+.home-parent .secondary{width:100%;justify-self:stretch}.home-bottom{font-size:.8125rem}
+.home-info,.home-parent{padding-block:26px}.home-parent .home-quote{font-size:1.3rem}
+.questions{grid-template-columns:1fr}.nav button{flex:1}
+}
 @page{size:A4 portrait;margin:10mm}
 @media print{body{background:white}.app{max-width:none;padding:0!important}.top,.no-print{display:none!important}.screen{display:none!important}#print{display:block!important;padding:0}.printcards{display:block}.print-page{display:grid!important;grid-template-columns:repeat(2,63mm);grid-template-rows:repeat(2,88mm);gap:12mm;margin:0;padding:15mm 0 0;break-after:page;break-inside:avoid}.print-page:last-child{break-after:auto}.pc{width:63mm!important;height:88mm!important;border:0;border-radius:4mm;box-shadow:none;print-color-adjust:exact;-webkit-print-color-adjust:exact}.card-face{width:63mm;height:88mm}}
 </style></head><body><main class="app"><header class="top"><button type="button" class="brand" onclick="show('home')"><span class="mark" aria-hidden="true">◌</span><span>מרגישים יחד</span></button><div class="language"><div class="control"><label id="ageLabel" for="age">גיל הילד</label><select id="age" aria-label="גיל הילד" onchange="setAge(this.value)"><option value="young">גיל 3–5</option><option value="middle">גיל 6–8</option><option value="older">גיל 9–12</option></select></div><div class="control"><label id="characterLabel" for="character">הדמות</label><select id="character" aria-label="בחירת דמות" onchange="setCharacter(this.value)"><option value="boy">דמות בן</option><option value="girl">דמות בת</option></select></div><div class="control"><label id="languageLabel" for="language">שפה</label><select id="language" aria-label="שפה / Language" onchange="setLanguage(this.value)"><option value="he">עברית</option><option value="en">English</option></select></div></div></header>
