@@ -3,7 +3,7 @@ const root=path.resolve(__dirname,'..');
 const sourcePath=process.argv[2]||path.join(root,'index.html');
 let html=fs.readFileSync(sourcePath,'utf8');
 const base='https://jony1346.github.io/feelings-together.github.io/';
-const description='A free emotion memory game for children ages 3–12 by Idit Edelshtein, CBT therapist and parent guide. Explore 24 feelings together, choose optional conversation prompts and print the cards at home.';
+const description='A free emotion memory game for children ages 3–12 by Idit Edelshtein, CBT therapist and parent guide. Explore 30 feelings together, choose optional conversation prompts and print the cards at home.';
 const elements={};
 const ctx={window:{matchMedia:()=>({matches:true})},document:{body:{},createTreeWalker:()=>({nextNode:()=>false}),getElementById:id=>elements[id]||(elements[id]={}),querySelectorAll:()=>[]},NodeFilter:{SHOW_TEXT:4},clearInterval:()=>{}};
 vm.createContext(ctx);
