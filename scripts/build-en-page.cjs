@@ -15,7 +15,7 @@ const translations=vm.runInContext('translations',ctx);
 const start=html.indexOf('<section id="home"'),end=html.indexOf('<section id="game"',start);
 html=html.slice(0,start)+'<section id="home" class="screen active">'+elements.home.innerHTML+'</section>\n'+html.slice(end);
 html=html.replace(/<footer id="siteFooter"[\s\S]*?<\/footer>/,'<footer id="siteFooter" class="site-footer no-print">'+elements.siteFooter.innerHTML+'</footer>');
-const scriptStart=html.indexOf('<script src="art-young-boy.js"');
+const scriptStart=html.indexOf('<script src="art-young-boy.js');
 const before=html.slice(0,scriptStart).replace(/>([^<>]+)</g,(full,text)=>translations[text]!==undefined?'>'+translations[text]+'<':full);
 html=before+html.slice(scriptStart);
 html=html.replace('<html lang="he" dir="rtl">','<html lang="en" dir="ltr">');
